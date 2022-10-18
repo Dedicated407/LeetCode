@@ -20,3 +20,21 @@ for (var i = 0; i < res4.Length; i++)
 {
     Console.Write($"{res4[i]} ");
 }
+
+Console.WriteLine();
+
+// var res5 = new[] {2, 0};
+// MergeSortedArray.Merge(res5, 1, new[] {1}, 1);
+// var res5 = new[] {1, 2, 3, 0, 0, 0};
+// MergeSortedArray.Merge(res5, 3, new[] {2, 5, 6}, 3);
+// var res5 = new[] {0};
+// MergeSortedArray.Merge(res5, 0, new[] {1}, 1);
+var res5 = new[] {4, 0, 0, 0, 0, 0};
+MergeSortedArray.Merge(res5, 1, new[] {1, 2, 3, 5, 6}, 5);
+// var res5 = new[] {0, 0, 0, 0, 0};
+// MergeSortedArray.Merge(res5, 0, new[] {1, 2, 3, 4, 5}, 5);
+
+for (var i = 0; i < res5.Length; i++)
+{
+    Console.Write($"{res5[i]} ");
+}
