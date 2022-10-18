@@ -11,3 +11,12 @@ for (var i = 0; i < res3.Length; i++)
 {
     Console.Write($"{res3[i]} ");
 }
+
+Console.WriteLine();
+
+var res4 = new[] {1, 0, 2, 3, 0, 4, 5, 0}; 
+DuplicateZeros.DoubleZeros(res4);
+for (var i = 0; i < res4.Length; i++)
+{
+    Console.Write($"{res4[i]} ");
+}
