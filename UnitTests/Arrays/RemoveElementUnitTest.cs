@@ -1,4 +1,5 @@
 ﻿using LeetCode;
+using LeetCode.Arrays;
 using Xunit;
 
 namespace UnitTests.Arrays;

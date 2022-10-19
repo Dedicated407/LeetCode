@@ -1,4 +1,5 @@
 ﻿using LeetCode;
+using LeetCode.Arrays;
 
 var res1 = MaxConsecutiveOnes.FindMaxConsecutiveOnes(new[] {1, 1, 0, 1, 1, 1});
 Console.WriteLine(res1);
