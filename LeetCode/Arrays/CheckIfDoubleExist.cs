@@ -2,37 +2,20 @@
 
 public static class CheckIfDoubleExist
 {
-    public static bool CheckIfExist(int[]? arr)
+    public static bool CheckIfExist(int[] arr)
     {
-        if (arr == null || arr.Length == 0)
+        var values = new HashSet<int> {arr[0]};
+
+        foreach (var element in arr)
         {
-            return false;
+            if (values.Contains(element * 2) || element % 2 == 0 && values.Contains(element / 2))
+            {
+                return true;
+            }
+
+            values.Add(element);
         }
 
-        var hashTable = new Dictionary<int, int>();
-        
-        foreach (var key in arr)
-        {
-            if (hashTable.ContainsKey(key))
-            {
-                hashTable[key]++;
-            }
-            else
-            {
-                hashTable[key] = 1;
-            }
-        }
-
-        return hashTable.Any(x =>
-        {
-            if (x.Key == 0)
-            {
-                return x.Value > 1;
-            }
-            
-            var key = hashTable.FirstOrDefault(kv => x.Key == kv.Key * 2).Key;
-            
-            return key != default;
-        });
+        return false;
     }
 }
