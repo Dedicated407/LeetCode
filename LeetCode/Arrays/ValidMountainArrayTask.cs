@@ -9,40 +9,36 @@ public static class ValidMountainArrayTask
             return false;
         }
 
-        bool increase;
+        bool increasing = true;
 
-        if (arr[0] < arr[1])
+        for (var i = 1; i < arr.Length; i++)
         {
-            increase = true;
-        }
-        else
-        {
-            return false;
-        }
-
-        for (var i = 1; i < arr.Length - 1; i++)
-        {
-            if (increase)
+            if (arr[i] == arr[i - 1])
             {
-                if (arr[i] > arr[i + 1])
-                {
-                    increase = false;
-                }
+                return false;
+            }
 
-                if (arr[i] == arr[i + 1])
+            if (increasing)
+            {
+                if (arr[i - 1] > arr[i])
                 {
-                    return false;
+                    increasing = false;
                 }
             } 
             else
             {
-                if (arr[i] <= arr[i + 1])
+                if (arr[i - 1] < arr[i])
                 {
                     return false;
                 }
             }
+
+            if (i == 1 && !increasing)
+            {
+                return false;
+            }
         }
 
-        return !increase;
+        return !increasing;
     }
 }
